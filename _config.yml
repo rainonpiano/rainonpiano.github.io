@@ -1,3 +1,49 @@
+# Site settings
+title:       青瓦淡墨
+email:       'main.lukai@gmail.com'
+description: '下雨就像弹钢琴'
+baseurl:     '' # The subpath of your site, e.g. /blog
+url:         'https://rainonpiano.github.io' # The base hostname & protocol for your site
+github:      'https://github.com/luckyscript'
+
+markdown:  kramdown
+# permalink: pretty
+permalink: /articles/:title
+paginate:  10
+
+# Navigators
+nav_page_names: ['about.md', 'archive.html']
+nav_feed: 'na'
+
+
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+sass:
+  style: compressed
+
+include:
+  - _pages
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+# Pages path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+feed:
+  excerpt_only: true
+  posts_limit: 10
+  posts_sort: last_modified_at

@@ -47,3 +47,16 @@ feed:
   excerpt_only: true
   posts_limit: 10
   posts_sort: last_modified_at
+
+tag_page_data:
+  sitemap: false
+
+# Archives
+jekyll-archives:
+  enabled: all
+  layout: archive
+  layouts:
+    tag: tag-archive
+  permalinks:
+    tag: '/tag/:name/'
+    category: '/category/:name/'
